@@ -94,7 +94,7 @@ b. Estructura Modular (SSI):
 
 <img src='capturas/includes.png' alt='carpeta includes' width='120' height='50'>
 
-<img src='../capturas/header.png' alt='uso del archivo header.php' width='100' height='50'>
+<img src='capturas/header.png' alt='uso del archivo header.php' width='100' height='50'>
 
 c. Navegación Dinámica:
 
