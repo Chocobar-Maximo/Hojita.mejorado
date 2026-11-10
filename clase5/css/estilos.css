@@ -1,0 +1,2425 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Jersey+10&display=swap');
+
+/* ==========================================
+   1. RESET Y CONFIGURACIÓN GENERAL
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* FONDO: Formato RGB */
+    background-color: rgb(34, 31, 31);
+    color: rgb(255, 255, 255);
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    padding: 20px;
+}
+
+/* ==========================================
+   CONFIGURACIÓN DE FUENTES Y TÍTULOS
+   ========================================== */
+
+/* TÍTULO: Nombre de color (ejemplo: red) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: white; /* <-- Nombre de color aplicado */
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS PARA LA PÁGINA DE AYUDA
+   ========================================== */
+
+.buscador-soporte {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.buscador-soporte h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.buscador-soporte form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(56, 49, 49);
+    border-radius: 20px;
+    padding: 8px 18px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.buscador-soporte label {
+    display: none;
+}
+
+.buscador-soporte input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    width: 100%;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.buscador-soporte input::placeholder {
+    font-family: "Jersey 10", sans-serif;
+    color: #aaaaaa;
+}
+
+/* BOTÓN: Formato HSL */
+.buscador-soporte button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.contenido-ayuda h3 {
+    font-size: 1.8rem;
+    margin: 30px 0 15px 0;
+}
+
+.contenido-ayuda ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contenido-ayuda li {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.contenido-ayuda p {
+    font-family: "Jaldi", sans-serif;
+    line-height: 1.6;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ==========================================
+   2. HEADER FIJO Y NAVEGACIÓN (MENÚ)
+   ========================================== */
+/* MENÚ: Formato HEX */
+.header-fijo {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #221f1f; /* HEX */
+    padding: 10px 20px;
+    border-bottom: 1px solid #333333;
+}
+
+.logo-contenedor {
+    margin-bottom: 10px;
+}
+
+.logo-contenedor h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white; /* Título en nombre de color */
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.barra-inferior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    background-color: #1a1717; /* HEX para elementos del menú */
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.navegacion a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    color: #ffffff; /* HEX */
+}
+
+.buscar-cancion form {
+    display: flex;
+    align-items: center;
+    background-color: rgb(72, 56, 56);
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+
+.buscar-cancion label {
+    display: none;
+}
+
+.buscar-cancion input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2rem;
+}
+
+.buscar-cancion input::placeholder {
+    font-family: "Jersey 10", sans-serif;
+    color: #aaaaaa;
+}
+
+/* BOTÓN: Formato HSL */
+.buscar-cancion button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================================
+   3. SECCIONES Y CONTENIDO PRINCIPAL
+   ========================================== */
+main h3 {
+    margin: 25px 0 15px 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.txt-recomendaciones,
+.txt-explorar,
+.txt-albumes,
+.txt-artista {
+    display: none; 
+}
+
+.img-recomendacion img,
+.img-explorar img,
+.img-alb img,
+.img-artista img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+
+.nombre-cancion p,
+.nombre-album p,
+.nombre-artista p {
+    font-size: 0.88rem;
+    color: #cccccc;
+    margin-top: 1px;
+}
+
+.seccion-grid {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+/* ==========================================
+   4. PIE DE PÁGINA Y REDES SOCIALES
+   ========================================== */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: rgb(68, 68, 68);
+    margin: 40px 0 20px 0;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.redes-sociales a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   LISTADO CENTRADO DE PREGUNTAS FRECUENTES
+   ========================================== */
+
+.seccion-preguntas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 30px auto 40px;
+    max-width: 650px;
+}
+
+.seccion-preguntas h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.seccion-preguntas ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.seccion-preguntas li {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.seccion-preguntas li::before {
+    content: "- ";
+    margin-right: 8px;
+    color: #ffffff;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS DEL BLOG
+   ========================================== */
+
+main h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.titulo-blog h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.articulo-contenedor {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+.img-blog img {
+    width: 280px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.contenido-blog p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin-bottom: 12px;
+}
+
+.seccion-comentarios {
+    margin-bottom: 30px;
+}
+
+.seccion-comentarios label {
+    display: none;
+}
+
+.seccion-comentarios textarea {
+    width: 100%;
+    background-color: rgb(74, 68, 68);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    color: #ffffff;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    outline: none;
+    resize: none;
+}
+
+.seccion-comentarios textarea::placeholder {
+    color: #bbbbbb;
+    font-family: "Jersey 10", sans-serif;
+}
+
+.comentario-popular h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.comentario-popular .usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.comentario-popular .usuario-info img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comentario-popular .nombre-usuario {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.comentario-popular .texto-comentario {
+    font-size: 0.85rem;
+    color: #cccccc;
+    line-height: 1.4;
+    padding-left: 38px;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA DE REGISTRO
+   ========================================== */
+
+.contenedor-registro {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+.tarjeta-registro {
+    flex: 1;
+    background-color: rgb(38, 34, 34);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta-registro h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.grupo-campo label {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #dddddd;
+}
+
+.grupo-campo input {
+    background-color: rgb(56, 49, 49);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    color: #ffffff;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    outline: none;
+}
+
+.grupo-campo input::placeholder {
+    color: #888888;
+}
+
+.grupo-genero p {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.opciones-genero {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.opciones-genero label {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* BOTONES: Formato HSL */
+.acciones-formulario {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.btn-reset, .btn-submit {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 8px 22px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-reset {
+    background-color: hsl(0, 0%, 33%); /* HSL */
+    color: #ffffff;
+}
+
+.btn-reset:hover {
+    background-color: hsl(0, 0%, 40%); /* HSL */
+}
+
+.btn-submit {
+    background-color: hsl(147, 50%, 36%); /* HSL */
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: hsl(147, 50%, 47%); /* HSL */
+    transform: scale(1.03);
+}
+
+.beneficios-registro {
+    flex: 1.2;
+}
+
+.beneficios-registro h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.beneficios-registro p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 16px;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA DE CUENTAS / PERFILES
+   ========================================== */
+
+main h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.contenedor-perfiles {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-usuario:hover {
+    transform: scale(1.08);
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.bg-rojo { background-color: rgb(23, 140, 203); }
+.bg-azul { background-color: rgb(229, 107, 92); }
+.bg-verde { background-color: rgb(18, 154, 72); }
+.bg-amarillo { background-color: rgb(241, 183, 73); }
+
+.tarjeta-usuario span {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.opcion-crear {
+    margin-bottom: 40px;
+}
+
+/* BOTÓN: Formato HSL */
+.btn-crear-cuenta {
+    display: inline-block;
+    background-color: hsl(0, 7%, 21%); /* HSL */
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-crear-cuenta:hover {
+    background-color: hsl(0, 4%, 28%); /* HSL */
+    transform: scale(1.02);
+}
+
+.informacion-registro {
+    margin-top: 20px;
+}
+
+.informacion-registro h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.informacion-registro p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA DE CURSOS
+   ========================================== */
+
+.contenedor-cursos {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.contenedor-cursos h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.introduccion-cursos {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1rem;
+    color: #dddddd;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.lista-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tarjeta-curso {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tarjeta-curso:hover {
+    transform: translateY(-3px);
+    background-color: rgb(46, 42, 42);
+}
+
+.icono-curso {
+    background-color: rgb(56, 49, 49);
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.icono-curso img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.info-curso h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.info-curso p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.metodologia {
+    background-color: rgb(56, 49, 49);
+    border-radius: 20px;
+    padding: 25px 30px;
+    border-left: 5px solid #2e8b57;
+}
+
+.metodologia h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.metodologia p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #dddddd;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA CV / ÚNETENOS
+   ========================================== */
+
+.contenedor-cv {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.titulo-unetenos {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.formulario-cv-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.grupo-campo label {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    background-color: rgb(85, 81, 81);
+    border: none;
+    border-radius: 15px;
+    padding: 12px 15px;
+    color: #ffffff;
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    resize: vertical;
+}
+
+.grupo-campo input::placeholder {
+    color: #cccccc;
+}
+
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-cv {
+    width: 110px;
+    height: 110px;
+    background-color: rgb(119, 119, 119);
+    border-radius: 50%;
+    margin: 0 auto 25px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar-cv img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.divisor-cv {
+    border: 0;
+    height: 1px;
+    background-color: rgb(68, 68, 68);
+    margin: 10px 0 18px 0;
+}
+
+.label-nombre {
+    font-size: 1.8rem !important;
+}
+
+.input-nombre {
+    font-size: 1.1rem !important;
+}
+
+/* BOTÓN: Formato HSL */
+.btn-enviar-cv {
+    background-color: hsl(0, 7%, 21%); /* HSL */
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-enviar-cv:hover {
+    background-color: hsl(0, 4%, 28%); /* HSL */
+    transform: scale(1.02);
+}
+
+.Proceso-pautas {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-top: 30px;
+}
+
+.Proceso-pautas h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.Proceso-pautas p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA DESCARGAR MÚSICA
+   ========================================== */
+
+.contenedor-descargas {
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+.contenedor-descargas h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.buscador-principal-descarga {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.buscador-principal-descarga form {
+    display: flex;
+    align-items: center;
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 3px 10px;
+    width: 250px;
+}
+
+.buscador-principal-descarga input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 6px;
+    outline: none;
+    width: 100%;
+    font-family: "Jaldi", sans-serif;
+}
+
+/* BOTÓN: Formato HSL */
+.buscador-principal-descarga button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.tarjeta-cancion-descarga {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+    background-color: transparent;
+}
+
+.portada-cancion img {
+    width: 130px;
+    height: 130px;
+    border-radius: 18px;
+    object-fit: cover;
+    display: block;
+}
+
+.datos-cancion {
+    flex: 1;
+}
+
+.datos-cancion p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.datos-cancion p span {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-right: 6px;
+}
+
+.contenedor-btn-descarga {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BOTÓN: Formato HSL */
+.btn-descargar-caja {
+    background-color: hsl(0, 3%, 17%); /* HSL */
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-descargar-caja:hover {
+    background-color: hsl(0, 5%, 23%); /* HSL */
+    transform: scale(1.05);
+}
+
+.btn-descargar-caja img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+}
+
+.btn-descargar-caja span {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.seccion-descripcion,
+.Instrucciones {
+    margin-bottom: 30px;
+}
+
+.seccion-descripcion h3,
+.Instrucciones h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.seccion-descripcion p,
+.Instrucciones p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA DETECTOR DE MÚSICA
+   ========================================== */
+
+.contenedor-detector {
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+.contenedor-detector h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.detectar-cancion-card {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* BOTÓN: Formato HSL */
+.btn-escuchar {
+    background-color: hsl(0, 7%, 21%); /* HSL */
+    border: none;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.btn-escuchar:hover {
+    transform: scale(1.08);
+    background-color: hsl(0, 4%, 28%); /* HSL */
+}
+
+.btn-escuchar:active {
+    transform: scale(0.95);
+}
+
+.btn-escuchar img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.instruccion-detector {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.1rem;
+    color: #dddddd;
+    max-width: 450px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.informacion-detector {
+    background-color: rgb(56, 49, 49);
+    border-radius: 20px;
+    padding: 25px 30px;
+    border-left: 5px solid #2e8b57;
+}
+
+.informacion-detector h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.informacion-detector p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.informacion-detector p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   ESTILOS MAPA DEL SITIO / MENÚ
+   ========================================== */
+
+.contenedor-menu-mapa {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.contenedor-menu-mapa h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+}
+
+.subtitulo-mapa {
+    font-family: "Jaldi", sans-serif;
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+.grid-mapa-sitio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-modulo {
+    background-color: rgb(38, 34, 34);
+    border-radius: 15px;
+    padding: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tarjeta-modulo:hover {
+    background-color: rgb(56, 49, 49);
+    transform: translateY(-4px);
+}
+
+.tarjeta-modulo img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-modulo h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 6px;
+}
+
+.tarjeta-modulo p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.85rem;
+    color: #cccccc;
+    margin: 0;
+}
+
+.guia-navegacion {
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 20px 25px;
+}
+
+.guia-navegacion h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.guia-navegacion p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA NOTICIAS
+   ========================================== */
+
+.contenedor-noticias {
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+.contenedor-noticias h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.buscador-principal-noticias {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.buscador-principal-noticias form {
+    display: flex;
+    align-items: center;
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 3px 10px;
+    width: 250px;
+}
+
+.buscador-principal-noticias input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 6px;
+    outline: none;
+    width: 100%;
+    font-family: "Jaldi", sans-serif;
+}
+
+/* BOTÓN: Formato HSL */
+.buscador-principal-noticias button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.lista-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tarjeta-noticia {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-3px);
+}
+
+.portada-noticia img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.contenido-noticia {
+    flex: 1;
+}
+
+.contenido-noticia h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.contenido-noticia p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.contenido-noticia p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA REPRODUCTOR
+   ========================================== */
+
+.contenedor-vista-reproductor {
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+.contenedor-vista-reproductor h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.buscador-seccion {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+.buscador-seccion form {
+    display: flex;
+    align-items: center;
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 3px 10px;
+    width: 220px;
+}
+
+.buscador-seccion input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 6px;
+    outline: none;
+    width: 100%;
+    font-family: "Jaldi", sans-serif;
+}
+
+/* BOTÓN: Formato HSL */
+.buscador-seccion button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.card-reproductor-interactivo {
+    background-color: rgb(38, 34, 34);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+.reproductor-cuerpo {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+.columna-info-cancion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.marca-reproductor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.marca-reproductor span {
+    font-size: 2.5rem;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.portada-cancion img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.meta-cancion p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.columna-letra-cancion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.columna-letra-cancion h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.caja-scroll-letra {
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+.caja-scroll-letra::-webkit-scrollbar {
+    width: 8px;
+}
+
+.caja-scroll-letra::-webkit-scrollbar-track {
+    background: rgb(56, 49, 49);
+    border-radius: 10px;
+}
+
+.caja-scroll-letra::-webkit-scrollbar-thumb {
+    background: rgb(85, 77, 77);
+    border-radius: 10px;
+}
+
+.caja-scroll-letra::-webkit-scrollbar-thumb:hover {
+    background: #2e8b57;
+}
+
+.caja-scroll-letra p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.reproductor-barra-inferior {
+    background-color: rgb(26, 23, 23);
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #383131;
+}
+
+.pista-actual {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pista-actual img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.pista-actual span {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.controles-audio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* BOTÓN DE CONTROL: Formato HSL */
+.btn-control {
+    background: transparent;
+    border: none;
+    color: hsl(0, 0%, 100%); /* HSL */
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, color 0.2s ease;
+}
+
+.btn-control:hover {
+    color: hsl(147, 50%, 36%); /* HSL */
+    transform: scale(1.15);
+}
+
+.btn-play {
+    font-size: 1.8rem;
+}
+
+.bloque-analisis-reproductor {
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 25px;
+    border-left: 5px solid #2e8b57;
+}
+
+.bloque-analisis-reproductor h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.bloque-analisis-reproductor p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.bloque-analisis-reproductor p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA ÁLBUMES
+   ========================================== */
+
+.contenedor-albumes {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.contenedor-albumes h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.album-destacado-principal {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 35px;
+}
+
+.portada-destacada img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.info-destacada {
+    flex: 1;
+}
+
+.insignia-destacado {
+    background-color: rgb(46, 139, 87);
+    color: #ffffff;
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.info-destacada h3 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 2px;
+}
+
+.info-destacada h4 {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.1rem;
+    color: red; /* Título secundario en nombre de color */
+    margin-bottom: 12px;
+}
+
+.info-destacada p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.titulo-seccion-grilla {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.grilla-albumes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-album {
+    background-color: rgb(38, 34, 34);
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tarjeta-album:hover {
+    transform: translateY(-4px);
+    background-color: rgb(56, 49, 49);
+}
+
+.portada-album img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.info-album h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 2px;
+}
+
+.anio-album {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.85rem;
+    color: #2e8b57;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.info-album p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+.guia-catalogo {
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 20px 25px;
+    border-left: 5px solid #2e8b57;
+}
+
+.guia-catalogo h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.guia-catalogo p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA EXPLORAR
+   ========================================== */
+
+.contenedor-explorar {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.contenedor-explorar h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.tendencia-destacada {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 35px;
+}
+
+.tendencia-destacada .portada-destacada img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.grilla-canciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-cancion {
+    background-color: rgb(38, 34, 34);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.tarjeta-cancion:hover {
+    transform: translateY(-3px);
+    background-color: rgb(56, 49, 49);
+}
+
+.portada-cancion-mini img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-cancion-mini {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-cancion-mini h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 2px;
+}
+
+.artista-cancion {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+}
+
+.tag-genero {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.8rem;
+    color: #2e8b57;
+    margin-top: 4px;
+}
+
+.bloque-explorar-info {
+    background-color: rgb(56, 49, 49);
+    border-radius: 15px;
+    padding: 22px 25px;
+    border-left: 5px solid #2e8b57;
+}
+
+.bloque-explorar-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.bloque-explorar-info p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.bloque-explorar-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA REDES SOCIALES
+   ========================================== */
+
+.contenedor-redes {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.contenedor-redes h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.grilla-redes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-red {
+    background-color: rgb(38, 34, 34);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.tarjeta-red:hover {
+    transform: translateY(-4px);
+    background-color: rgb(72, 56, 56);
+    border-color: #2e8b57;
+}
+
+.icono-red {
+    background-color: rgb(56, 49, 49);
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    min-height: 45px;
+}
+
+.icono-red img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.info-red h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 2px;
+}
+
+.handle-red {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.85rem;
+    color: #2e8b57;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.info-red p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.bloque-comunidad-info {
+    background-color: rgb(72, 56, 56);
+    border-radius: 15px;
+    padding: 25px;
+    border-left: 5px solid #2e8b57;
+}
+
+.bloque-comunidad-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.bloque-comunidad-info p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.bloque-comunidad-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   ESTILOS DE LA PÁGINA SOBRE NOSOTROS
+   ========================================== */
+
+.contenedor-nosotros {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.banner-nosotros {
+    background-color: rgb(38, 34, 34);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 5px solid #2e8b57;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.banner-nosotros h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.banner-nosotros p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.bloque-mision-origen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-nosotros {
+    background-color: rgb(72, 56, 56);
+    border-radius: 15px;
+    padding: 22px;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-nosotros:hover {
+    transform: translateY(-3px);
+}
+
+.encabezado-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.encabezado-tarjeta h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+.tarjeta-nosotros p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #dddddd;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.subtitulo-nosotros {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.grilla-diferenciales {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.caja-diferencial {
+    background-color: rgb(38, 34, 34);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #383131;
+    text-align: center;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.caja-diferencial:hover {
+    border-color: #2e8b57;
+    background-color: rgb(56, 49, 49);
+}
+
+.icono-diferencial {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.caja-diferencial h4 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.caja-diferencial p {
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ==========================================
+   ESTILOS JAVASCRIPT & MODO CLARO
+   ========================================== */
+
+/* Reloj */
+.reloj-contenedor {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2rem;
+    color: #2e8b57;
+    background-color: rgb(26, 23, 23);
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Menú Desplegable */
+.btn-toggle-menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+@media (max-width: 850px) {
+    .navegacion {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+    }
+    .navegacion.menu-desplegado {
+        display: flex !important;
+    }
+}
+
+/* Botón Modo Oscuro/Claro */
+.btn-modo {
+    background-color: rgb(56, 49, 49);
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 6px 14px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-modo:hover {
+    background-color: rgb(74, 68, 68);
+}
+
+/* Modo Claro (Toggle CSS) */
+body.modo-claro {
+    background-color: #f4f4f4 !important;
+    color: #1a1717 !important;
+}
+
+body.modo-claro h1, 
+body.modo-claro h2, 
+body.modo-claro h3, 
+body.modo-claro p, 
+body.modo-claro li, 
+body.modo-claro a {
+    color: #1a1717 !important;
+}
+
+body.modo-claro .header-fijo,
+body.modo-claro .navegacion,
+body.modo-claro .tarjeta-registro,
+body.modo-claro .tarjeta-noticia,
+body.modo-claro .tarjeta-curso,
+body.modo-claro .tarjeta-album {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.modo-claro .reloj-contenedor {
+    background-color: #e0e0e0;
+    color: #155724;
+}
+
+/* Corrección de contraste en Modo Claro para el Blog */
+body.modo-claro .comentario-popular,
+body.modo-claro .comentario-popular h4,
+body.modo-claro .comentario-popular .nombre-usuario,
+body.modo-claro .comentario-popular .texto-comentario {
+    color: #1a1717 !important;
+}
+
+body.modo-claro .comentario-popular {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   ESTILOS PARA MENÚ INTERACTIVO / ACORDEÓN
+   ========================================== */
+
+.item-acordeon {
+    background-color: rgb(38, 34, 34);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.titulo-pregunta {
+    background-color: rgb(56, 49, 49);
+    padding: 12px 20px;
+    margin: 0;
+    cursor: pointer;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.titulo-pregunta:hover {
+    background-color: rgb(74, 68, 68);
+}
+
+.respuesta-pregunta {
+    display: none; /* Se oculta por defecto para el JS */
+    padding: 15px 20px;
+    font-family: "Jaldi", sans-serif;
+    font-size: 0.95rem;
+    color: #dddddd;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   MODO CLARO (TOGGLE DE CLASES - CONSIGNA 6)
+   ========================================== */
+body.modo-claro {
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+}
+
+body.modo-claro h1, 
+body.modo-claro h2, 
+body.modo-claro h3, 
+body.modo-claro p,
+body.modo-claro label {
+    color: #1a1a1a;
+}
+
+body.modo-claro .tarjeta-registro,
+body.modo-claro .header-fijo {
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.modo-claro .grupo-campo input {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+}
+
+/* Alineación de la fila superior */
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.herramientas-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Estilo de píldora para el reloj */
+.caja-reloj {
+    background-color: #1a1717;
+    color: #2e8b57;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.3rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #333333;
+}
+
+/* Estilo del botón de modo oscuro/claro */
+.btn-tema {
+    background-color: #383131;
+    color: #ffffff;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.1rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-tema:hover {
+    background-color: #4a4141;
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   MODO CLARO (TOGGLE DE CLASES - CONSIGNA 6)
+   ========================================== */
+body.modo-claro {
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+}
+
+/* Cambiar color de textos generales y enlaces */
+body.modo-claro h1, 
+body.modo-claro h2, 
+body.modo-claro h3, 
+body.modo-claro h4, 
+body.modo-claro h5, 
+body.modo-claro h6, 
+body.modo-claro p,
+body.modo-claro label,
+body.modo-claro a,
+body.modo-claro span {
+    color: #1a1a1a !important;
+}
+
+/* Encabezado e instrumentos superiores */
+body.modo-claro .header-fijo {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+body.modo-claro .navegacion {
+    background-color: #e2e2e2;
+}
+
+body.modo-claro .caja-reloj {
+    background-color: #e2e2e2;
+    color: #1b6339;
+    border-color: #cccccc;
+}
+
+body.modo-claro .btn-tema {
+    background-color: #d1d1d1;
+    color: #1a1a1a;
+}
+
+/* Tarjetas, formularios y contenedores en modo claro */
+body.modo-claro .tarjeta-registro,
+body.modo-claro .tarjeta-usuario,
+body.modo-claro .informacion-registro,
+body.modo-claro .metodologia,
+body.modo-claro .tarjeta-curso {
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .grupo-campo input {
+    background-color: #e8e8e8;
+    color: #1a1a1a;
+}
+
+/* Arreglo para contenedores e información en modo claro */
+body.modo-claro .Proceso-pautas,
+body.modo-claro .informacion-registro,
+body.modo-claro .metodologia {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Forzar que títulos y párrafos dentro de estos bloques sean legibles */
+body.modo-claro .Proceso-pautas h3,
+body.modo-claro .Proceso-pautas p,
+body.modo-claro .informacion-registro h3,
+body.modo-claro .informacion-registro p,
+body.modo-claro .metodologia h3,
+body.modo-claro .metodologia p {
+    color: #1a1a1a !important;
+}
+body.modo-claro .detectar-cancion-card,
+body.modo-claro .informacion-detector {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .instruccion-detector,
+body.modo-claro .informacion-detector h3,
+body.modo-claro .informacion-detector p {
+    color: #1a1a1a !important;
+}
+body.modo-claro .recomendaciones,
+body.modo-claro .explorar,
+body.modo-claro .albumes,
+body.modo-claro .artistas {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .recomendaciones h3,
+body.modo-claro .recomendaciones p,
+body.modo-claro .explorar h3,
+body.modo-claro .explorar p,
+body.modo-claro .albumes h3,
+body.modo-claro .albumes p,
+body.modo-claro .artistas h3,
+body.modo-claro .artistas p {
+    color: #1a1a1a !important;
+}
+
+body.modo-claro .tarjeta-noticia {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .tarjeta-noticia h3,
+body.modo-claro .tarjeta-noticia p {
+    color: #1a1a1a !important;
+}
+body.modo-claro .card-reproductor-interactivo,
+body.modo-claro .bloque-analisis-reproductor {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .meta-cancion p,
+body.modo-claro .columna-letra-cancion h3,
+body.modo-claro .caja-scroll-letra p,
+body.modo-claro .bloque-analisis-reproductor h3,
+body.modo-claro .bloque-analisis-reproductor p,
+body.modo-claro .pista-actual span {
+    color: #1a1a1a !important;
+}
+/* Color por defecto del reproductor en modo oscuro */
+.reproductor-barra-inferior {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.pista-actual span {
+    color: #ffffff !important;
+}
+
+/* Color del reproductor únicamente cuando se activa el Modo Claro */
+body.modo-claro .reproductor-barra-inferior {
+    background-color: #f0f0f0 !important;
+    border-top: 1px solid #e0e0e0;
+}
+
+body.modo-claro .pista-actual span {
+    color: #1a1a1a !important;
+}
+
+/* Estilo base para los botones de control en Modo Oscuro */
+.btn-control {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-control:hover {
+    color: #1db954; /* Un toque de color al pasar el cursor */
+}
+
+/* Ajuste de color para los botones únicamente en Modo Claro */
+body.modo-claro .btn-control {
+    color: #1a1a1a !important;
+}
+
+body.modo-claro .btn-control:hover {
+    color: #000000 !important;
+}
+body.modo-claro .album-destacado-principal,
+body.modo-claro .tarjeta-album,
+body.modo-claro .guia-catalogo {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .album-destacado-principal h3,
+body.modo-claro .album-destacado-principal h4,
+body.modo-claro .album-destacado-principal p,
+body.modo-claro .tarjeta-album h3,
+body.modo-claro .tarjeta-album p,
+body.modo-claro .anio-album,
+body.modo-claro .titulo-seccion-grilla,
+body.modo-claro .guia-catalogo h3,
+body.modo-claro .guia-catalogo p {
+    color: #1a1a1a !important;
+}
+
+body.modo-claro .tendencia-destacada,
+body.modo-claro .tarjeta-cancion,
+body.modo-claro .bloque-explorar-info {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .tendencia-destacada h3,
+body.modo-claro .tendencia-destacada h4,
+body.modo-claro .tendencia-destacada p,
+body.modo-claro .tarjeta-cancion h3,
+body.modo-claro .artista-cancion,
+body.modo-claro .tag-genero,
+body.modo-claro .bloque-explorar-info h3,
+body.modo-claro .bloque-explorar-info p {
+    color: #1a1a1a !important;
+}
+body.modo-claro .tarjeta-red,
+body.modo-claro .bloque-comunidad-info {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .tarjeta-red h3,
+body.modo-claro .tarjeta-red p,
+body.modo-claro .handle-red,
+body.modo-claro .bloque-comunidad-info h3,
+body.modo-claro .bloque-comunidad-info p {
+    color: #1a1a1a !important;
+}
+body.modo-claro .banner-nosotros,
+body.modo-claro .tarjeta-nosotros,
+body.modo-claro .caja-diferencial {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .banner-nosotros h2,
+body.modo-claro .banner-nosotros p,
+body.modo-claro .tarjeta-nosotros h3,
+body.modo-claro .tarjeta-nosotros p,
+body.modo-claro .subtitulo-nosotros,
+body.modo-claro .caja-diferencial h4,
+body.modo-claro .caja-diferencial p {
+    color: #1a1a1a !important;
+}
+body.modo-claro .tarjeta-modulo,
+body.modo-claro .guia-navegacion {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.modo-claro .tarjeta-modulo h3,
+body.modo-claro .tarjeta-modulo p,
+body.modo-claro .subtitulo-mapa,
+body.modo-claro .guia-navegacion h3,
+body.modo-claro .guia-navegacion p {
+    color: #1a1a1a !important;
+}
